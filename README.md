@@ -3,7 +3,7 @@
 <img src=https://natujenge.ke/assets/images/logo-wordmark.svg>
 </h1>
 
-<h5 align="center">Tax Calculation App</h5>
+<h3 align="center">Tax Calculation App</h3>
 
                             ============Joint Project===============
 
