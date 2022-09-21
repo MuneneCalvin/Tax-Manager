@@ -1,9 +1,74 @@
-body {
-    color: black;
-    background-color: #FFFFFF;
+* {
+    box-sizing: border-box;
 }
-@media print {
-    body {
-    background-color: transparent;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #fff;
+    /* color: #150050; */
+}
+.navbar .logo1 {
+    padding: 22px 20px;
+    height: 80px;
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+.navbar-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navbar-links li {
+    list-style: none;
+}
+.navbar-links li a{
+    text-decoration: none;
+    color: #E5E5E5;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 30px;
+    display: block;
+}
+.navbar-links li:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+}
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #DA0037;
+    border-radius: 10px;
+}
+@media (max-width: 400px) {
+    .toggle-button {
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
