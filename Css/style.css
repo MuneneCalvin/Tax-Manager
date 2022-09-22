@@ -60,7 +60,7 @@ body {
     background-color: #DA0037;
     border-radius: 10px;
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .toggle-button {
         display: flex;
     }
@@ -72,3 +72,49 @@ body {
         align-items: flex-start;
     }
 }
+.tax-section{
+    padding: 40px;
+    height: 800px;
+    background: #f9f4f4;
+}
+.salary-form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.salary-form input{
+    width: 300px;
+    font-size: 25px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.salary-form button{
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+}
+.breakdown{
+    display: grid;
+    place-items: center;
+}
+.breakdown-info{
+    width: auto;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+}
+.breakdown-info span{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
