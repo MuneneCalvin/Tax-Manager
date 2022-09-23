@@ -111,6 +111,11 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
     padding: 20px;
 }
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .breakdown-info span{
     padding: 10px;
     font-size: 16px;

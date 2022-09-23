@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax Calculation</title>
     <link rel="stylesheet" href="./Css/style.css">
+    <script src="./Js/script.js" defer></script>
 </head>
 <body>
     <img src="https://natujenge.ke/assets/images/logo-wordmark.svg" alt="">
@@ -31,25 +32,21 @@
 
     <section class="tax-section">
         <h2>Enter Your Gross Salary And Your Tax Is Calculated</h2>
-        <form class="salary-form">
-        <input type="number" placeholder="Enter Your Gross Salary">
-        <button>Calculate</button>
-
-        </form>
-
+        <div class="salary-form">
+        <input type="number" placeholder="Enter Your Gross Salary" id="gross-salary">
+        <button onclick="calculate()" >Calculate</button>
+        </div>
         <div class="breakdown">
            <div class="breakdown-info">
-            <p>Net Pay: <span>90000</span></p>
-            <p>NSSF Contribution: <span></span></p>
-            <p>Taxable Income: <span></span></p>
-            <p>Tax Before Relief: <span></span></p>
-            <p>Insurance/NHIF Relief: <span>900</span></p>
-            <p>Paye: <span></span></p>
-            <p>NHIF Contribution: <span></span></p>
-           </div>
-
-        <!-- </div> -->
-    </div>
+           <div class="info"> <p>Net Pay: </p><input type="text" id="netpay"></div>
+           <div class="info"> <p>NSSF Contribution: </p><input id="nssf-contribution" type="text"></div>
+           <div class="info"> <p>Taxable Income: </p><input id="taxable-income" type="text"></div>
+           <div class="info"> <p>Tax Before Relief:</p><input id="tax-before-relief" type="text"></div>
+           <div class="info"> <p>Personal Relief: </p><input id="personal-relief" type="text" ></div>
+           <div class="info"> <p>Insurance/NHIF Relief: </p><input  id="insurance" type="text"></div>
+           <div class="info"> <p>PAYE: </p><input  id="paye" type="text"></div>
+           <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text"></div>
+        </div>
     </section>
 </body>
 </html>
