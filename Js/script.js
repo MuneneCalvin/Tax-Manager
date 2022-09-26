@@ -4,11 +4,9 @@
  const insurance = 210;
  const nhif = 1400;
 
-
-
-function calculate (){
-    const grossSalary = parseInt(document.getElementById('gross-salary').value);
-
+ 
+ function calculate (){
+     const grossSalary = parseInt(document.getElementById('gross-salary').value);
     //taxable income is result of subtracting nssf from gross salary.
     const taxableIncome = (grossSalary-nssfContribution);
 
@@ -57,3 +55,4 @@ document.getElementById('paye').value = 'Ksh '+ paye;
 const netPay = taxableIncome-(nhif +insurance + taxAmount);
 document.getElementById('netpay').value = 'Ksh '+ netPay;
 }
+ 

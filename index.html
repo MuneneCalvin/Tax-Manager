@@ -33,8 +33,9 @@
     <section class="tax-section">
         <h2>Enter Your Gross Salary And Your Tax Is Calculated</h2>
         <div class="salary-form">
-        <input type="number" placeholder="Enter Your Gross Salary" id="gross-salary">
-        <button onclick="calculate()" >Calculate</button>
+        <input type="number" placeholder="Enter Your Gross Salary" id="gross-salary" min="4999">
+        <!-- <input type="button"  onclick="calculate()"  id="button" value="calculate" class="calculate-btn" /> -->
+        <button type="button" onclick="calculate()" id="button" class="calculate-btn">Calculate</button>
         </div>
         <div class="breakdown">
            <div class="breakdown-info">

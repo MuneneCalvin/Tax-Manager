@@ -95,9 +95,14 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.salary-form button{
+#button{
     border-radius: 5px;
-    width: 100px;
+    width: 150px;
+    height: 40px;
+}
+.calculate-btn{
+    border-radius: 5px;
+    width: 150px;
     height: 40px;
 }
 .breakdown{
