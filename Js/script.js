@@ -21,20 +21,20 @@ function calculate (){
        
         // function calculates the tax amount using KRA rates.
         function calculateTaxAmount(){
-            if(taxableIncome<=24000){
+            if(taxableIncome > 24000){
+                let newTaxable = (taxableIncome-24000);
+                if(newTaxable > 8333){
+                newTaxable = newTaxable-8333;
+                taxAmount =2400 + 2083.25+(newTaxable * 30/100);
+                } else {
+                taxAmount = 2400 + (newTaxable*25/100);
+                console.log('tax=>',taxAmount)
+                }
+             return taxAmount; 
+               
+            }else{
                 taxAmount = 0;
-            };
-                if(taxableIncome > 24000){
-                    let newTaxable = (taxableIncome-24000);
-                    if(newTaxable > 8333){
-                    newTaxable = newTaxable-8333;
-                    taxAmount =2400 + 2083.25+(newTaxable * 30/100);
-                    }else {
-                    taxAmount =2400 + (newTaxable*25/100);
-                    }
-
-            return taxAmount;  
-
+                return taxAmount;
             }   
         }
 
@@ -46,17 +46,14 @@ calculateTaxAmount();
 document.getElementById('tax-before-relief').value = 'Ksh ' + taxAmount;
 
 //PAYE is calculated after subtracting all reliefs(personal and insurance) from the tax amount.
-if(taxAmount<=2610){
-    paye = 0;
-}else {
+if(taxAmount > 2610){
     paye = taxAmount - (personalRelief+ insurance);
+}else {
+    paye = 0;
 } 
 document.getElementById('paye').value = 'Ksh '+ paye;
 
 //net pay is the remaining income after subtracting all deductibles
 const netPay = taxableIncome-(nhif +insurance + taxAmount);
 document.getElementById('netpay').value = 'Ksh '+ netPay;
-
-
 }
- 
