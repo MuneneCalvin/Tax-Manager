@@ -54,5 +54,30 @@ document.getElementById('paye').value = 'Ksh '+ paye;
 //net pay is the remaining income after subtracting all deductibles
 const netPay = taxableIncome-(nhif +insurance + taxAmount);
 document.getElementById('netpay').value = 'Ksh '+ netPay;
+document.getElementById('netpay2').value = 'Ksh '+ netPay
 }
- 
+
+
+
+
+//expenses array
+let expensesNameArray =['rent', 'food'];
+let expensesAmountArray =[5000, 4000 ];
+
+
+function addExpense(){
+    let expensename = document.getElementById('expensename').value;
+    let expensevalue = document.getElementById('expenseamount').value;
+    expensesNameArray.push(expensename);
+    expensesAmountArray.push(expensevalue);
+}
+expensesNameArray.forEach((item)=>{
+    let expensesDiv = document.createElement('div');
+    expensesDiv.innerText = item;
+    document.getElementById('expenses').append(expensesDiv);
+})
+expensesAmountArray.forEach((item)=>{
+    let expensesDiv2 = document.createElement('div');
+    expensesDiv2.innerText = item;
+    document.getElementById('expenses').append(expensesDiv2);
+})
