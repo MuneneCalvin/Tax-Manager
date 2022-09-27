@@ -46,7 +46,7 @@ document.getElementById('tax-before-relief').value = 'Ksh ' + taxAmount;
 
 //PAYE is calculated after subtracting all reliefs(personal and insurance) from the tax amount.
 if(taxAmount > 2610){
-    paye = taxAmount - (personalRelief+ insurance);
+    paye = (taxAmount - (personalRelief+ insurance)).toFixed(2);
 }else {
     paye = 0;
 } 
@@ -56,9 +56,9 @@ document.getElementById('paye').value = 'Ksh '+ paye;
 let netPay = taxableIncome-(nhif +insurance + taxAmount);   
 sessionStorage.setItem('netPay',netPay);
 document.getElementById('netpay').value = 'Ksh '+ netPay;
-document.getElementById('netpay2').value = 'Ksh '+ netPay
+document.getElementById('netpay2').value = 'Ksh '+ netPay;
 }
-console.log(netPay);
+
 
 
 
@@ -75,7 +75,7 @@ expenseItem = document.getElementById('expense-name').value;
 expenseValue = document.getElementById('expense-amount').value;
 expensesList.append(expenseItem, " ", expenseValue ,'Ksh' );
 document.getElementById('expense-name').value = '';
-document.getElementById('expense-amount').value = '';
+// document.getElementById('expense-amount').value = '';
 
 
 }
@@ -99,9 +99,9 @@ function calculateBalance(arr){
     let sum = 0;
 expensesArray.forEach(element => {
     sum= sum+ element.amount;
+    console.log(sum);
 });
-console.log(100000-sum);
-let salaryBalance = sessionStorage.getItem('netPay')-sum;
+let salaryBalance = sessionStorage.getItem('netPay')- sum;
 document.getElementById('salarybalance').value = 'Ksh ' + salaryBalance;
 return salaryBalance;
 }
