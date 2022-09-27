@@ -1,70 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax Calculation</title>
-    <link rel="stylesheet" href="./Css/style.css">
-    <script src="./Js/script.js" defer></script>
+    <meta charset="utf-8">
+    <title>Tax Manager</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./script.js"></script>
 </head>
 <body>
-    
-    <!-- Navigation-->
-    <nav class="navbar">
-        <img src="https://natujenge.ke/assets/images/logo-wordmark.svg" alt="">
-        <div class="'logo1"> <h1>Tax Calculator</h1></div>
-        <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-        <div class="navbar-links">
-            <ul>
-                <li><a href="#">Tax Calculation</a></li>
-                <li><a href="#">Bill Manager</a></li>
-                <li><a href="#">BootCamp</a></li>
-                <li><a href="#">Authors</a></li>
-            </ul>
-        </div>
-    </nav>
-    <!-- Form section-->
+    <div class="main">
+        <nav>
+            <label class="logo"><img src="https://natujenge.ke/assets/images/logo-wordmark.svg" alt=""></label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">Bill Manager</a></li>
+            <li><a href="https://www.meliora.co.ke/articles/nvrjgtnsgh5ophs6mm" target="_blank">S.E Virtual BootCamp</a></li>
+            <li>
+                <a href="#">Contributors
+                <i class="fas fa-caret-down"></i>
+                </a>
+                <ul>
+                    <li><a href="https://github.com/stevomusembi" target="_blank">Steve</a></li>
+                    <li><a href="https://github.com/MuneneCalvin" target="_blank">Calvin</a></li>
+                </ul>
+            </li>
+        </ul>
+        </nav>
 
+        <!-- Tax Section -->
     <section class="tax-section">
-        <h2>Enter Your Gross Salary And Your Tax Is Calculated</h2>
         <div class="salary-form">
-        <input type="number" placeholder="Enter Your Gross Salary" id="gross-salary" min="4999">
-        <!-- <input type="button"  onclick="calculate()"  id="button" value="calculate" class="calculate-btn" /> -->
-        <button type="button" onclick="calculate()" id="button" class="calculate-btn">Calculate</button>
+            <h4>Enter Your Gross Salary</h4>
+            <br>
+        <input type="number" placeholder="Enter Your Gross Salary" id="gross-salary">
         </div>
+        <br>
         <div class="breakdown">
-           <div class="breakdown-info">
-           <div class="info"> <p>Net Pay: </p><input type="text" id="netpay" onkeydown="return false"></div>
-           <div class="info"> <p>NSSF Contribution: </p><input id="nssf-contribution" type="text" onkeydown="return false"></div>
-           <div class="info"> <p>Taxable Income: </p><input id="taxable-income" type="text" onkeydown="return false"></div>
-           <div class="info"> <p>Tax Before Relief:</p><input id="tax-before-relief" type="text" onkeydown="return false"></div>
-           <div class="info"> <p>Personal Relief: </p><input id="personal-relief" type="text" onkeydown="return false"onkeydown="return false"></div>
-           <div class="info"> <p>Insurance/NHIF Relief: </p><input  id="insurance" type="text" onkeydown="return false"></div>
-           <div class="info"> <p>PAYE: </p><input  id="paye" type="text" onkeydown="return false"></div>
-           <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text" onkeydown="return false"></div>
+            <div class="breakdown-info">
+            <div class="info"> <p>Net Pay: </p><input type="text" id="netpay"></div>
+            
+            <div class="info"> <p>NSSF Contribution: </p><input id="nssf-contribution" type="text"></div>
+            
+            <div class="info"> <p>Taxable Income: </p><input id="taxable-income" type="text"></div>
+            
+            <div class="info"> <p>Tax Before Relief:</p><input id="tax-before-relief" type="text"></div>
+            
+            <div class="info"> <p>Personal Relief: </p><input id="personal-relief" type="text" ></div>
+            
+            <div class="info" <p>Insurance/NHIF Relief: </p><input  id="insurance" type="text"></div>
+            
+            <div class="info"> <p>PAYE: </p><input  id="paye" type="text"></div>
+            
+            <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text"></div>
+            <br>
+            <button onclick="calculate()" class="btn" >Calculate</button>
         </div>
     </section>
-    <hr>
-    <section class="tax-section">
-        <h2>Calculates your Monthly Expenses from the Net Salary:</h2>
-        <div class="salary-form">
-        <input type="text" placeholder="Net Salary From Above " id="netpay2" onkeydown="return false">
-        </div>
-        <div class="breakdown">
-            <h4>Enter your Expenses:</h4>
-            <div class="breakdown-info expenses-list" id="breakdown">
-           <div class="info"><input type="text" id="expense-name" placeholder="Expense name"><input type="number" id="expense-amount" placeholder="Expense Amount"></div>
-            <button id="btn" type="button" onclick="addExpense()">Add Expense</button>
-        </div>
-        <button type="button" onclick="calculateBalance()">Calculate Balance</button>
-        <input type="text" id="salarybalance" placeholder="your balance">
+
+    <!-- Bill Section -->
+    <section>
+        <div class="bill">
+            <div class="bill-form">
+                <h4>Enter Your Net Salary</h4>
+                <br>
+                <input type="number" placeholder="Net Salary" id="net-salary">
+            </div>
+            <br>
+            <div>
+                <input type="text" id="expense" placeholder="Expense">  <input type="number" id="amount" placeholder="Amount">
+                <br>
+                <br>
+                <button class="btn-1" onclick="addExpense()">Add Expense</button>
+            </div>
+            <br>
+            <button onclick="calculateBalance()" class="btn">Calculate</button>
+            <br>
+            <br>
+            <input type="text" id="salarybalance" placeholder="Your Balance">
         </div>
     </section>
-   
+    </div>
+
+<!-- Footer  -->
+    <section>
+        <footer class="footer"
+            <p>Tax Manager</p>
+    <div class="social">
+        <div class="icons">
+            <a href="https://github.com/MuneneCalvin/Tax-Calculation-App"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-code"></ion-icon></a>
+        </div>
+    </div>
+            <p class="end">Copyright &copy; 2022 @ Powered By Natujenge </p>
+    </footer>
+    </section>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
