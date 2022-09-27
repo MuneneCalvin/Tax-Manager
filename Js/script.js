@@ -75,7 +75,7 @@ expenseItem = document.getElementById('expense-name').value;
 expenseValue = document.getElementById('expense-amount').value;
 expensesList.append(expenseItem, " ", expenseValue ,'Ksh' );
 document.getElementById('expense-name').value = '';
-document.getElementById('expense-amount').value = '';
+// document.getElementById('expense-amount').value = '';
 
 
 }
