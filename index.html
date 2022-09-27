@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Tax Manager</title>
     <link rel="stylesheet" href="./main.css">
-    <script src="./script.js"></script>
+    <script src="Js/script.js" defer></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
 </head>
 <body>
     <div class="main">
@@ -62,11 +63,11 @@
             <div class="bill-form">
                 <h4>Enter Your Net Salary</h4>
                 <br>
-                <input type="number" placeholder="Net Salary" id="net-salary">
+                <input type="text" placeholder="Net Salary" id="netpay2">
             </div>
             <br>
-            <div>
-                <input type="text" id="expense" placeholder="Expense">  <input type="number" id="amount" placeholder="Amount">
+            <div id="breakdown" class="expense-list">
+                <input type="text" id="expense-name" placeholder="Expense">  <input type="number" id="expense-amount" placeholder="Amount">
                 <br>
                 <br>
                 <button class="btn-1" onclick="addExpense()">Add Expense</button>
