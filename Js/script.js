@@ -46,7 +46,7 @@ document.getElementById('tax-before-relief').value = 'Ksh ' + taxAmount;
 
 //PAYE is calculated after subtracting all reliefs(personal and insurance) from the tax amount.
 if(taxAmount > 2610){
-    paye = taxAmount - (personalRelief+ insurance);
+    paye = (taxAmount - (personalRelief+ insurance)).toFixed(2);
 }else {
     paye = 0;
 } 
