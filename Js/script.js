@@ -3,6 +3,7 @@
  const personalRelief = 2400;
  const insurance = 210;
  const nhif = 1400;
+ let netPay;
 
  
  function calculate (){
@@ -52,32 +53,55 @@ if(taxAmount > 2610){
 document.getElementById('paye').value = 'Ksh '+ paye;
 
 //net pay is the remaining income after subtracting all deductibles
-const netPay = taxableIncome-(nhif +insurance + taxAmount);
+let netPay = taxableIncome-(nhif +insurance + taxAmount);   
+sessionStorage.setItem('netPay',netPay);
 document.getElementById('netpay').value = 'Ksh '+ netPay;
 document.getElementById('netpay2').value = 'Ksh '+ netPay
 }
+console.log(netPay);
 
 
 
 
-//expenses array
-let expensesNameArray =['rent', 'food'];
-let expensesAmountArray =[5000, 4000 ];
 
 
 function addExpense(){
-    let expensename = document.getElementById('expensename').value;
-    let expensevalue = document.getElementById('expenseamount').value;
-    expensesNameArray.push(expensename);
-    expensesAmountArray.push(expensevalue);
+let expensesList = document.createElement('div');
+ let expenseItem = document.createElement('span');
+ let expenseValue = document.createElement('span');
+let parent = document.getElementById('breakdown');
+parent.appendChild(expensesList);
+expenseItem = document.getElementById('expense-name').value;
+expenseValue = document.getElementById('expense-amount').value;
+expensesList.append(expenseItem, " ", expenseValue ,'Ksh' );
+document.getElementById('expense-name').value = '';
+document.getElementById('expense-amount').value = '';
+
+
 }
-expensesNameArray.forEach((item)=>{
-    let expensesDiv = document.createElement('div');
-    expensesDiv.innerText = item;
-    document.getElementById('expenses').append(expensesDiv);
+
+const btnElememt = document.getElementById('btn');
+const expensesArray = [];
+let expenseItem1 = document.getElementById('expense-name')
+let expenseValue1 = document.getElementById('expense-amount')
+btnElememt.addEventListener('click', function(){
+    let expenseEntry = {
+        title: expenseItem1.value,
+        amount: parseFloat(expenseValue1.value)
+    }
+expensesArray.push(expenseEntry);
+
+console.log(expensesArray);
 })
-expensesAmountArray.forEach((item)=>{
-    let expensesDiv2 = document.createElement('div');
-    expensesDiv2.innerText = item;
-    document.getElementById('expenses').append(expensesDiv2);
-})
+
+
+function calculateBalance(arr){
+    let sum = 0;
+expensesArray.forEach(element => {
+    sum= sum+ element.amount;
+});
+console.log(100000-sum);
+let salaryBalance = sessionStorage.getItem('netPay')-sum;
+document.getElementById('salarybalance').value = 'Ksh ' + salaryBalance;
+return salaryBalance;
+}

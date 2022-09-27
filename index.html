@@ -49,6 +49,22 @@
            <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text" onkeydown="return false"></div>
         </div>
     </section>
+    <hr>
+    <section class="tax-section">
+        <h2>Calculates your Monthly Expenses from the Net Salary:</h2>
+        <div class="salary-form">
+        <input type="text" placeholder="Net Salary From Above " id="netpay2" onkeydown="return false">
+        </div>
+        <div class="breakdown">
+            <h4>Enter your Expenses:</h4>
+            <div class="breakdown-info expenses-list" id="breakdown">
+           <div class="info"><input type="text" id="expense-name" placeholder="Expense name"><input type="number" id="expense-amount" placeholder="Expense Amount"></div>
+            <button id="btn" type="button" onclick="addExpense()">Add Expense</button>
+        </div>
+        <button type="button" onclick="calculateBalance()">Calculate Balance</button>
+        <input type="text" id="salarybalance" placeholder="your balance">
+        </div>
+    </section>
    
 </body>
 </html>

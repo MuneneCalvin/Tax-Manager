@@ -125,5 +125,9 @@ input::-webkit-inner-spin-button {
     font-size: 16px;
     font-weight: bold;
 }
+.expenses-list{
+    font-size: 20px;
+    color:rgb(3, 21, 90);
+}
 
 
