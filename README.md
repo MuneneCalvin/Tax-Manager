@@ -9,5 +9,6 @@
 
                             🔥**Authors**🔥
                     ---------------------------------
-            1. Steven Musembi
-            2. Calvin Mwangi
+            1. Calvin Mwangi
+            2.Steven Musembi
+            3. Collins Kiplimo
