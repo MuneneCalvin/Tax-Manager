@@ -5,80 +5,120 @@
     <title>Tax Manager</title>
     <link rel="stylesheet" href="./main.css">
     <script src="Js/script.js" defer></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
+    
 </head>
-<body>
-    <div class="main">
-        <nav>
-            <label class="logo"><img src="https://natujenge.ke/assets/images/logo-wordmark.svg" alt=""></label>
-        <ul>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">Bill Manager</a></li>
-            <li><a href="https://www.meliora.co.ke/articles/nvrjgtnsgh5ophs6mm" target="_blank">S.E Virtual BootCamp</a></li>
-            <li>
-                <a href="#">Contributors
-                <i class="fas fa-caret-down"></i>
-                </a>
-                <ul>
-                    <li><a href="https://github.com/stevomusembi" target="_blank">Steve</a></li>
-                    <li><a href="https://github.com/MuneneCalvin" target="_blank">Calvin</a></li>
-                </ul>
-            </li>
-        </ul>
-        </nav>
 
-        <!-- Tax Section -->
-    <section class="tax-section">
-        <div class="salary-form">
-            <h4>Enter Your Gross Salary</h4>
-            <br>
-        <input type="number" placeholder="Enter Your Gross Salary" id="gross-salary">
+
+<body class="container">
+   
+    <header >
+        <div class="logo" > 
+            <img src="./img/natujenge.svg" alt="Natujenge"/> 
         </div>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+    </header>
+    <div>
+        <br>
+        
+    </div>
+    <div id="nav" class="links">
+    
+        <ul>
+            <li class="active" ><a data-toggle="tab" href="tax-calculator">Home</a></li>
+            <li ><a data-toggle="tab" href="#bill-management">Bill Manager</a></li>
+            <li><a href="https://www.meliora.co.ke/articles/nvrjgtnsgh5ophs6mm" target="_blank">S.E Virtual BootCamp</a></li>
+            <li><a href="#">Contributors
+                <i class="fas fa-caret-down"></i>
+                </a>
+                <!-- <ul>
+                    <li><a href="https://github.com/stevomusembi" target="_blank">Steve</a></li>
+                    <li><a href="https://github.com/MuneneCalvin" target="_blank">Calvin</a></li>
+                            </a></li>
+                </ul> -->
+            </li>
+        </ul>
+    
+    </div>
+
+    <div class="tab-content">
+        <div id="tax-calculator" >
+          <form action="" method="get">
+                <br>
+    <section class="tax-section">
+        <div class="salary-form">
+            <p>   Enter Your Gross Salary:  </p>
+            <br>
+            
+            <br>
+        
+        <input type="number" placeholder=" Enter Your Gross Salary" id="gross-salary">
+        <br>
+        <br>
+        <br>
+        <button onclick="calculate()" class="btn-1"class="btn">Calculate</button>
+     
+        </div>
+ 
+        <br>
+        
         <div class="breakdown">
             <div class="breakdown-info">
-            <div class="info"> <p>Net Pay: </p><input type="text" id="netpay"></div>
+            <div class="info"> <p>Net Pay: </p><input type="text" id="netpay" class="input-size"></div>
             
-            <div class="info"> <p>NSSF Contribution: </p><input id="nssf-contribution" type="text"></div>
+            <div class="info"> <p>NSSF Contribution: </p><input id="nssf-contribution" type="text" class="input-size"></div>
             
-            <div class="info"> <p>Taxable Income: </p><input id="taxable-income" type="text"></div>
+            <div class="info"> <p>Taxable Income: </p><input id="taxable-income" type="text" class="input-size"></div>
             
-            <div class="info"> <p>Tax Before Relief:</p><input id="tax-before-relief" type="text"></div>
+            <div class="info"> <p>Tax Before Relief:</p><input id="tax-before-relief" type="text" class="input-size"></div>
             
-            <div class="info"> <p>Personal Relief: </p><input id="personal-relief" type="text" ></div>
+            <div class="info"> <p>Personal Relief: </p><input id="personal-relief" type="text" class="input-size" ></div>
             
-            <div class="info" <p>Insurance/NHIF Relief: </p><input  id="insurance" type="text"></div>
+            <div class="info" <p>Insurance/NHIF Relief: </p><input  id="insurance" type="text"  class="input-size"></div>
             
-            <div class="info"> <p>PAYE: </p><input  id="paye" type="text"></div>
+            <div class="info"> <p>PAYE: </p><input  id="paye" type="text"  class="input-size"></div>
             
-            <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text"></div>
-            <br>
-            <button onclick="calculate()" class="btn" >Calculate</button>
+            <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text"  class="input-size"></div>
+            
+           
         </div>
     </section>
+    </div>
+</form>
+    </div>
 
-    <!-- Bill Section -->
+    
+    <div id="bill-management" ></div><!-- Bill Section -->
     <section>
         <div class="bill">
             <div class="bill-form">
-                <h4>Enter Your Net Salary</h4>
+                <h4 class="font-change">Enter Your Net Salary</h4>
                 <br>
-                <input type="text" placeholder="Net Salary" id="netpay2">
+                <input type="text" placeholder="Net Salary"  class="input-size" id="netpay2">
             </div>
             <br>
             <div id="breakdown" class="expense-list">
-                <input type="text" id="expense-name" placeholder="Expense">  <input type="number" id="expense-amount" placeholder="Amount">
+                <input type="text" id="expense-name" placeholder="Expense" class="input-size">  <input type="number"  class="input-size" id="expense-amount" placeholder="Amount">
                 <br>
                 <br>
                 <button class="btn-1" id="btn" onclick="addExpense()">Add Expense</button>
             </div>
             <br>
-            <button onclick="calculateBalance()" class="btn">Calculate</button>
+            <button onclick="calculateBalance()" class="btn-1" class="btn">Calculate</button>
             <br>
             <br>
-            <input type="text" id="salarybalance" placeholder="Your Balance">
+            <input type="text" id="salarybalance" placeholder="Your Balance" class="input-size">
         </div>
     </section>
+</<div>
+    
+</div>>
     </div>
 
 <!-- Footer  -->
