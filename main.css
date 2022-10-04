@@ -1,122 +1,167 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
+
+
+
+#nav {
+    overflow: auto;
+    display: inline;
+   font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+   height:auto;
+   
+
+    }
+    .logo{
+        position: absolute;
+        top:54%;
+        left:50%;
+        transform: translate(-50%,-300%);
+    }
+  
+
+  
+#nav  li {
+  
+  display:inline;
+  
+  
+      }
+.tab-content{
+        align-items: center;
+        display: grid;
+        justify-content: center;
+    }
+      
+#nav  li a{
+  color:rgb(14, 13, 13);
+  width: 190px;
+  font-weight: bold;
+  padding: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+ 
+  
+      }
+  
+#nav ul
+{
+  padding:5px 0px 5px 0px;
+  border-radius: 20px;
+  height:50px;
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+  font: size 18px;
+   border: 1px solid #888;
+   margin-bottom: 10px;
+
 }
-body{
-    font-family: sans-serif;
+.links ul{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+  
+#nav .active > a { 
+      background-color: rgb(221, 221, 221);
+      color: rgb(41, 10, 216);
+      text-decoration: none;
+      padding: 15px 40px;
+       box-shadow: inset 0px 5px 8px  #777;
+      
 }
 
-nav{
-    height: 100px;
-    background: #475f6a;
-    box-shadow: 0 3px 15px rgba(0,0,0,.4);
-}
-nav img{
-    width: 200px;
-    color: white;
-}
-nav ul{
-    float: right;
-    margin-right: 30px;
-}
-nav ul li{
-    display: inline-block;
-}
-nav ul li a{
-    color: white;
-    display: block;
-    padding: 0 15px;
-    line-height: 70px;
-    font-size: 20px;
-    background: #475f6a;
 
-    transition: .5s;
+#nav a:hover { 
+color: rgb(0, 0, 0);
 }
-nav ul li a:hover,
-nav ul li a.active{
-    color: #23dbdb;
-}
-nav ul ul{
-    position: absolute;
-    top: 85px;
-    border-top: 3px solid #23dbdb;
-    opacity: 0;
-    visibility: hidden;
-}
-nav ul li:hover > ul{
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-    transition: .3s linear;
-}
-nav ul ul li{
-    width: 150px;
-    display: list-item;
-    position: relative;
-    border: 1px solid #042331;
-    border-top: none;
-}
-nav ul ul li a{
-    line-height: 50px;
-}
-nav ul ul ul{
-    border-top: none;
-}
-nav ul ul ul li{
-    position: relative;
-    top: -70px;
-    left: 150px;
-}
-nav ul ul li a i{
-    margin-left: 45px;
-}
-.main{
-    width: auto;
-    background:  linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(pexels-tbee-82256.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 1000px;
+
+body
+    {
+    font-family:Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  }
+
+
+.container {
+    width: 830px; 
+    margin: 15px auto;
+    background-color:rgb(213, 221, 219);
+    
     
 }
 
-/* Tax Section */
+
+*{
+    padding:0;
+    margin:0;
+}
+
 .tax-section {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 2%;
+    padding: 0.5%;
+    font-size: large;
+    font-weight: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     /* height: 500px; */
+}
+.input-size{
+    align-items: center;
+    width:180px;
+    height: 25px;
+
+    box-shadow:azure;
 }
 .bill-section{
     align-items: center;
     justify-content: center;
-    height: 400px;
+    font-size: large;
+    font-weight: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
 }
 .salary-form {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight:bold;
 }
 .breakdown{
     display: grid;
     place-items: center;
 }
-.btn {
-    border-radius: 5px;
-    height: 30px;
-    width: 80px;
-    color: #063247;
-    background-color: #23dbdb;
-}
-.info{
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
+.font-change{
+    font-weight:bold;
+    font-family:"Arial Black", "Arial Bold", Gadget, sans-serif;
 
 }
+/* .btn {
+    border-radius: 20px;
+    height: 30px;
+    width: 82px;
+    color: #063247;
+    background-color: #23dbdb;
+    display: flex;
+    align-items: center;
+ 
+} */
+#gross-salary{
+    width:250px;
+    height: 25px;
+    
+}
+.info{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight:bold;
+
+}
+
+
 
 /* Bill */
 .bill {
@@ -126,13 +171,15 @@ nav ul ul li a i{
     /* height: 400px; */
 }
 .btn-1 {
-    border-radius: 5px;
-    height: 34px;
+    border-radius: 20px;
+    height: 30px;
     width: 100px;
     color: #063247;
     background-color: #23dbdb;
 
 }
+
+
 
 /* Footer */
 footer {
@@ -182,8 +229,4 @@ footer p:nth-child(2) {
     bottom: 5px;
     font-size: 14px;
 }
-/* @media only screen and (max-width: 400px) {
-    .tax-section {
-      background: red;
-    }
-  } */
+
