@@ -1,102 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Tax Manager</title>
-    <link rel="stylesheet" href="./main.css">
-    <script src="Js/script.js" defer></script>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="./main.css">
+   <script src="Js/script.js" defer></script>
 </head>
-
-
-<body class="container">
-   
-    <header >
-        <div class="logo" > 
-            <img src="./img/natujenge.svg" alt="Natujenge"/> 
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    
+<body>
+    <header>
+        <nav>
+            <img src="natujenge.svg" alt="Natujenge logo">
+            <a href="https://www.meliora.co.ke/articles/nvrjgtnsgh5ophs6mm" target="_blank">OYF S.E Virtual BootCamp</a>
+        </nav>
     </header>
-    <div>
-        <br>
-        
-    </div>
-    <div id="nav" class="links">
-    
-        <ul>
-            <li class="active" ><a data-toggle="tab" href="tax-calculator">Home</a></li>
-            <li ><a data-toggle="tab" href="#bill-management">Bill Manager</a></li>
-            <li><a href="https://www.meliora.co.ke/articles/nvrjgtnsgh5ophs6mm" target="_blank">S.E Virtual BootCamp</a></li>
-           
-        </ul>
-    
-    </div>
-
-    <div class="tab-content">
-        <div id="tax-calculator" >
-          <form action="" method="get">
-                <br>
-    <section class="tax-section">
-        <div class="salary-form">
-            <p>   Enter Your Gross Salary:  </p>
-            <br>
-            
-            <br>
-        
-        <input type="number" placeholder=" Enter Your Gross Salary" id="gross-salary">
-        <br>
-        <br>
-        <br>
-        <button onclick="calculate()" class="btn-1"class="btn">Calculate</button>
-     
+   
+    <div id="tax-manager-page">
+        <div id="links">
+            <ul class="tabs nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#billmanager">Bill Manager</a></li>
+                <li><a data-toggle="tab" href="#contributors">Team Members</a></li>
+                
+            </ul>
         </div>
- 
-        <br>
         
-        <div class="breakdown">
-            <div class="breakdown-info">
-            <div class="info"> <p>Net Pay: </p><input type="text" id="netpay" class="input-size"></div>
-            
-            <div class="info"> <p>NSSF Contribution: </p><input id="nssf-contribution" type="text" class="input-size"></div>
-            
-            <div class="info"> <p>Taxable Income: </p><input id="taxable-income" type="text" class="input-size"></div>
-            
-            <div class="info"> <p>Tax Before Relief:</p><input id="tax-before-relief" type="text" class="input-size"></div>
-            
-            <div class="info"> <p>Personal Relief: </p><input id="personal-relief" type="text" class="input-size" ></div>
-            
-            <div class="info" <p>Insurance/NHIF Relief: </p><input  id="insurance" type="text"  class="input-size"></div>
-            
-            <div class="info"> <p>PAYE: </p><input  id="paye" type="text"  class="input-size"></div>
-            
-            <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text"  class="input-size"></div>
-            
-           
-        </div>
-    </section>
-    </div>
-</form>
-    </div>
+        
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <h4>Calculates your PAYE and Net Salary</h4>
+            <div class="salary-form">
+                <p>   Enter Your Gross Salary:  </p>
+                <input type="number" placeholder=" Enter Your Gross Salary" id="gross-salary">
+                <button onclick="calculate()" class="btn-1">Calculate</button>
+            </div>
+            <div class="breakdown">
+                <div class="breakdown-info">
+                    <div class="info"> <p>Net Pay: </p><input type="text" id="netpay" class="input-size"></div>
+                
+                    <div class="info"> <p>NSSF Contribution: </p><input id="nssf-contribution" type="text" class="input-size"></div>
+                
+                    <div class="info"> <p>Taxable Income: </p><input id="taxable-income" type="text" class="input-size"></div>
+                
+                    <div class="info"> <p>Tax Before Relief:</p><input id="tax-before-relief" type="text" class="input-size"></div>
+                
+                    <div class="info"> <p>Personal Relief: </p><input id="personal-relief" type="text" class="input-size" ></div>
+                
+                    <div class="info"> <p>Insurance/NHIF Relief: </p><input  id="insurance" type="text"  class="input-size"></div>
+                
+                    <div class="info"> <p>PAYE: </p><input  id="paye" type="text"  class="input-size"></div>
+                
+                    <div class="info"> <p>NHIF Contribution:</p><input id="nhif-contribution" type="text"  class="input-size"></div>
+                </div>
+          </div><br>
+          </div>
 
-    
-    <div id="bill-management" ></div><!-- Bill Section -->
-    <section>
-        <div class="bill">
-            <div class="bill-form">
-                <h4 class="font-change">Enter Your Net Salary</h4>
+
+        <div id="billmanager" class="tab-pane fade">
+            <div class="bill-form salary-form">
+                <h4>Your Net Salary </h4>
                 <br>
                 <input type="text" placeholder="Net Salary"  class="input-size" id="netpay2">
             </div>
-            <br>
             <div id="breakdown" class="expense-list">
-                <input type="text" id="expense-name" placeholder="Expense" class="input-size">  <input type="number"  class="input-size" id="expense-amount" placeholder="Amount">
+                <h4>Your Monthly Expenses</h4>
+                <div class="expense-form">
+                    <input type="text" id="expense-name" placeholder="Expense" class="input-size">
+                    <input type="number"  class="input-size" id="expense-amount" placeholder="Amount">
+                </div>
                 <br>
                 <br>
                 <button class="btn-1" id="btn" onclick="addExpense()">Add Expense</button>
@@ -107,26 +82,30 @@
             <br>
             <input type="text" id="salarybalance" placeholder="Your Balance" class="input-size">
         </div>
-    </section>
-</<div>
-    
-</div>>
-    </div>
 
-<!-- Footer  -->
-    <section>
-        <footer class="footer"
-            <p>Tax Manager</p>
-    <div class="social">
-        <div class="icons">
+        <div id="contributors" class="tab-pane">
+            <h5>Calvin</h5>
             <a href="https://github.com/MuneneCalvin/Tax-Manager"><ion-icon name="logo-github"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-code"></ion-icon></a>
+            <h5>Collins</h5>
+            <a href="https://github.com/MuneneCalvin/Tax-Manager"><ion-icon name="logo-github"></ion-icon></a>
+            <h5>Steven</h5>
+            <a href="https://github.com/MuneneCalvin/Tax-Manager"><ion-icon name="logo-github"></ion-icon></a>
+           
         </div>
-    </div>
+    </div>    
+   
+    <footer>
+
+        <div class="footer">
+            <div class="icons">
+                <a href="https://github.com/MuneneCalvin/Tax-Manager"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-code"></ion-icon></a>
+            </div>
+            
             <p class="end">Copyright &copy; 2022 @ Powered By Natujenge </p>
+        </div>
     </footer>
-    </section>
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
 </body>
 </html>
